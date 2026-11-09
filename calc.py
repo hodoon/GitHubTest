@@ -1,10 +1,9 @@
 def average(nums):
-    total = 0
-    for n in nums:
-        total += n
-    return total / len(nums)
+    if not nums:
+        raise ValueError("empty")
+    return sum(nums) / len(nums)
 
 
 def read_config(path):
-    f = open(path)
-    return f.read()
+    with open(path, encoding="utf-8") as f:
+        return f.read()
